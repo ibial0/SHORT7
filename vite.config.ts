@@ -2,11 +2,9 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
-// GitHub Pages deployment: change 'short7' to your actual repository name
-const isGitHubPages = process.env.GITHUB_PAGES === 'true'
-
 export default defineConfig({
-  base: isGitHubPages ? '/short7/' : '/',
+  // ./ = relative path → works on ANY hosting (GitHub Pages, custom domain, subfolder)
+  base: './',
   plugins: [
     react(),
     tailwindcss(),
